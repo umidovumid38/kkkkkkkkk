@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Progress : MonoBehaviour
@@ -22,6 +23,8 @@ public class Progress : MonoBehaviour
             SceneWIn.SetActive(true);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+            int sceneID = SceneManager.GetActiveScene().buildIndex;
+            Levelcomplite.CourLevelcomplite[sceneID] = true;
             Debug.Log("Win");
 
         }

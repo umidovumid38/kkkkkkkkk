@@ -84,7 +84,17 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerMove>().Dead();
+            var player = collision.gameObject.GetComponent<PlayerMove>();
+
+            if (player.isImmortal)
+            {
+                gameObject.SetActive(false);
+            }
+            else 
+            {
+                player.Dead();
+            
+            }
         }
     }
     private void OnDrawGizmos()

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -12,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     private bool isGround;
     public float luchDistance = 0.2f;
     public AudioClip djPlayerMove;
+
+    public bool isImmortal;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -55,11 +58,28 @@ public class PlayerMove : MonoBehaviour
             return SpeedWalk * Time.deltaTime;
         }
     }
+
+    public void StartisImmortal() 
+    {
+       if( isImmortal == false)
+        StartCoroutine(isImmortalTimer());
+    }
+
+    private IEnumerator isImmortalTimer() 
+    {
+        isImmortal = true;
+    yield return new WaitForSeconds(3);
+        isImmortal = false;
+    }
     public void Dead()
     {
-        PanelDead.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Destroy(gameObject);
+        if (isImmortal == false) 
+        {
+            PanelDead.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Destroy(gameObject);
+        }
+        
     }
 }
 
