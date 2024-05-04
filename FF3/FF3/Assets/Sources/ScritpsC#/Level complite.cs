@@ -13,8 +13,8 @@ public class Levelcomplite : MonoBehaviour
         CourLevelcomplite[0] = true;
         for (int i = 0; i < CourLevelcomplite.Length; i++)
         {
-
-            buttonLevel[i].interactable = CourLevelcomplite[i];
+            
+             buttonLevel[i].interactable = CourLevelcomplite[i];
         }
     }
 }

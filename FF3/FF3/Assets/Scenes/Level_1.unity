@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0029010782, g: 0.0021209668, b: 0.0021209668, a: 1}
+  m_IndirectSpecularColor: {r: 0.0028953676, g: 0.0021171595, b: 0.0021171595, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2216,7 +2216,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4377,6 +4377,7 @@ MonoBehaviour:
   PanelDead: {fileID: 1679949369}
   luchDistance: 1
   djPlayerMove: {fileID: 8300000, guid: 7334297f5dd720a43b43fc6038871467, type: 3}
+  isImmortal: 0
 --- !u!54 &1724653601
 Rigidbody:
   m_ObjectHideFlags: 0
